@@ -1,7 +1,9 @@
+const result1 = /^[a-zA-Z][\w-]+[a-zA-Z]$/;
+const result2 = /\d{3}/;
+
 class Validator {
   validateUsername(userName) {
-    return /\w\W\d[d{3}\^d\w$]/.test(userName);
+    return result1.test(userName) && !result2.test(userName);
   }
 }
-const result = new Validator("cv-32f");
-console.log(result.validateUsername());
+
